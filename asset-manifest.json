@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/cookie-test/static/js/main.d19782ec.js",
+    "main.js": "/cookie-test/static/js/main.01e825af.js",
     "index.html": "/cookie-test/index.html",
-    "main.d19782ec.js.map": "/cookie-test/static/js/main.d19782ec.js.map"
+    "main.01e825af.js.map": "/cookie-test/static/js/main.01e825af.js.map"
   },
   "entrypoints": [
-    "static/js/main.d19782ec.js"
+    "static/js/main.01e825af.js"
   ]
 }
