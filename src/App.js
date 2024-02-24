@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+
+const setCookie = () => {
+  fetch('https://fancy-large-scale.glitch.me/set-cookie')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.text(); // or response.json() if expecting JSON data
+    })
+    .then(data => {
+      console.log('Response:', data);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+}
 
 function App() {
+  const [text, setText ] = useState("");
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <form>
+        <input type="text" value={text} onChange={e => setText(e.target.value)} />
+        <input type="submit" onClick={e => {
+          e.preventDefault();
+          setCookie();
+        }} />
+      </form>
+      <p>{text}</p>
     </div>
   );
 }
