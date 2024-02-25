@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const setCookie = () => {
-  fetch('https://fancy-large-scale.glitch.me/set-cookie')
+  fetch('https://fancy-large-scale.glitch.me/set-cookie', { method: "GET", credentials: 'include' })
     .then(response => {
       if (!response.ok) {
         throw new Error('Network response was not ok');
@@ -17,7 +17,7 @@ const setCookie = () => {
 }
 
 function App() {
-  const [text, setText ] = useState("");
+  const [text, setText] = useState("");
   return (
     <div>
       <form>
@@ -28,6 +28,7 @@ function App() {
         }} />
       </form>
       <p>{text}</p>
+      <iframe src="https://fancy-large-scale.glitch.me/"></iframe>
     </div>
   );
 }
